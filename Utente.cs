@@ -1,10 +1,12 @@
 ﻿public class Utente
 {
+    
+
     public string Nome;
     public string Cognome;
     public string Email;
     public string Telefono;
-    public string Password;
+    public string Password ;
 
     public Utente(string nome, string cognome, string email, string telefono,string password)
     {
@@ -13,5 +15,11 @@
         Email = email;
         Password = password;
         Telefono = telefono;
+    }
+
+
+    public override string ToString()
+    {
+        return $"nome:{Nome}, cognome:{Cognome}, email:{Email}, telefono:{Telefono}, password:{Password}";
     }
 }
