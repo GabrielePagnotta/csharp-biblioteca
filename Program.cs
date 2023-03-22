@@ -17,13 +17,13 @@ Console.WriteLine("inserisci un cognome");
 nuovoUtente.Cognome = Console.ReadLine();
 
 
-Console.WriteLine("inserisci un email");
+Console.WriteLine("inserisci una email");
 nuovoUtente.Email = Console.ReadLine();
 
-Console.WriteLine("inserisci un telefono");
+Console.WriteLine("inserisci un numero di telefono");
 nuovoUtente.Telefono = Console.ReadLine();
 
-Console.WriteLine("inserisci un password");
+Console.WriteLine("inserisci una password");
 nuovoUtente.Password = Console.ReadLine();
 
 Console.WriteLine("registrazione effettuata con successo");
