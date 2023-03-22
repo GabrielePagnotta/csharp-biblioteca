@@ -1,25 +1,15 @@
 ﻿public class Utente
 {
-    
-
-    public string Nome;
-    public string Cognome;
-    public string Email;
-    public string Telefono;
-    public string Password ;
-
-    public Utente(string nome, string cognome, string email, string telefono,string password)
+    public Utente(string nome,string cognome)
     {
         Nome = nome;
         Cognome = cognome;
-        Email = email;
-        Password = password;
-        Telefono = telefono;
     }
 
+    public string Nome;
+    public string Cognome;
+    public string ? Email;
+    public string ? Telefono;
+    public string? Password ;
 
-    public override string ToString()
-    {
-        return $"nome:{Nome}, cognome:{Cognome}, email:{Email}, telefono:{Telefono}, password:{Password}";
-    }
 }

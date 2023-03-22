@@ -1,47 +1,22 @@
-﻿using System.Runtime.CompilerServices;
+﻿
+var res = CercaDocumentoPerCodice_TrovaPerCodice();
+printTestResult(nameof(CercaDocumentoPerCodice_TrovaPerCodice), res);
 
-Utente nuovoUtente = new Utente("","","","","");
-Console.WriteLine("sei registrato? Y/N");
-
-char ask =Convert.ToChar( Console.ReadLine());
-
-
-if (ask == 'N')
+void printTestResult(string testCase, bool ok)
 {
-    
-Console.WriteLine("inserisci un nome");
-nuovoUtente.Nome = Console.ReadLine();
-
-
-Console.WriteLine("inserisci un cognome");
-nuovoUtente.Cognome = Console.ReadLine();
-
-
-Console.WriteLine("inserisci una email");
-nuovoUtente.Email = Console.ReadLine();
-
-Console.WriteLine("inserisci un numero di telefono");
-nuovoUtente.Telefono = Console.ReadLine();
-
-Console.WriteLine("inserisci una password");
-nuovoUtente.Password = Console.ReadLine();
-
-Console.WriteLine("registrazione effettuata con successo");
-
-
-Console.WriteLine(nuovoUtente.ToString());
-}
-else if(ask == 'Y')
-{
-    Console.WriteLine("accesso in corso");
-}
-else
-{
-    Console.WriteLine("inserisci un input valido");
+    Console.WriteLine($"testing: {testCase}");
+    Console.WriteLine(ok ? "passed :)" : "failed :(");
 }
 
+bool CercaDocumentoPerCodice_TrovaPerCodice()
+{
+    var biblioteca = new Libreria();
+    var testDoc = new Documento("0001", "peppa pig");
+    biblioteca.AggiungiDocumento(testDoc);
+    biblioteca.AggiungiDocumento(new Documento("0002", "boolean"));
+    biblioteca.AggiungiDocumento(new Documento("0003", "shrek2"));
 
+    var risultato = biblioteca.CercaDocumentoPerCodice("0001");
 
-
-
-
+    return risultato == testDoc;
+   }

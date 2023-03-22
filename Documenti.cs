@@ -1,46 +1,45 @@
-﻿
-
-public class Documenti
+﻿public class Documento
 {
-    public int Codice { get; set; }
-    public string Titolo { get; set; }
+    public string Codice { get; set; } = string.Empty;
+    public string Titolo { get; set; } = string.Empty; 
     public int Anno { get; set; }
-    public string Settore { get; set; }
-    public int Scaffale { get; set; }
-    public string Autore { get; set; }
+    public string ? Settore { get; set; } = string.Empty;
+    public string ? Scaffale { get; set; } = string.Empty;
+    public string ? Autore { get; set; } = string.Empty; 
 
-    public Documenti(int codice, string titolo, int anno, string settore, int scaffale, string autore)
+    public Documento(string codice, string titolo)
     {
         Codice = codice;
         Titolo = titolo;
-        Anno = anno;
-        Settore = settore;
-        Scaffale = scaffale;
-        Autore = autore;
-
+       
     }
 
    
 }
 
 
-public class Libro:Documenti
+public class Libro:Documento
 {
-    public Libro(int codice, string titolo, int anno, string settore, int scaffale, string autore) : base(codice, titolo, anno, settore, scaffale, autore)
+    public int ? Numeropagine { get; set; }
+    public Libro(string codice, string titolo) : base(codice, titolo)
     {
+       
     }
 
-    public int Numeropagine { get; set; }
+
     
 
 }
 
-public class Dvd : Documenti
+public class Dvd : Documento
 {
-    public double durata;
-
-    public Dvd(int codice, string titolo, int anno, string settore, int scaffale, string autore) : base(codice, titolo, anno, settore, scaffale, autore)
+    public int ? Durata { get; set; }
+    public Dvd(string codice, string titolo) : base(codice, titolo)
     {
+        
     }
+
+
+   
 }
 
